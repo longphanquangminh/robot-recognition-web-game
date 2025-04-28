@@ -23,7 +23,7 @@ const ProgressBar = ({ progress }: { progress: number }) => (
   <div class="progress-container">
     <div
       class="progress-bar"
-      style={{ width: `${(progress / 5) * 100}%` }}
+      style={{ width: `${((progress - 1) / 4) * 100}%` }}
     />
   </div>
 )
@@ -221,6 +221,7 @@ export function App() {
 
       <div class="leaderboard">
         <h2>🏆 Leaderboard</h2>
+        {highScores.length <= 0 ? <p>👻 No participants yet!</p> :
         <div class="scores-list">
           {highScores.map((score, index) => (
             <div class="score-item" key={index}>
@@ -229,7 +230,7 @@ export function App() {
               <span>{score.date}</span>
             </div>
           ))}
-        </div>
+        </div>}
       </div>
     </div>
   )
