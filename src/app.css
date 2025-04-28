@@ -1,0 +1,272 @@
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  background-image: url('/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.game-info {
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.title {
+  z-index: 1;
+  font-size: 2.5em;
+  color: #646cff;
+  text-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+
+.card {
+  z-index: 1;
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  width: 80%;
+  max-width: 1000px;
+}
+
+.robots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.robot-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.robot-card:hover {
+  transform: scale(1.05);
+}
+
+.robot-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.robot-name {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.guess-container {
+  text-align: center;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.option-button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.1em;
+}
+
+.option-button:hover {
+  background-color: #747bff;
+  transform: translateY(-2px);
+}
+
+.leaderboard {
+  z-index: 1;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.scores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.score-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.score-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.preview-container,
+.guess-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.start-screen {
+  text-align: center;
+  padding: 2em;
+}
+
+.start-screen h2 {
+  color: #646cff;
+  margin-bottom: 1em;
+}
+
+.start-screen p {
+  margin-bottom: 2em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.play-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.play-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gameover-screen {
+  text-align: center;
+  padding: 2em;
+}
+
+.gameover-screen h2 {
+  color: #ff4444;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.name-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.name-input {
+  padding: 10px;
+  font-size: 1.1em;
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 250px;
+  text-align: center;
+}
+
+.name-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.submit-score-button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-score-button:disabled {
+  background-color: #4a4a4a;
+  cursor: not-allowed;
+}
+
+.submit-score-button:not(:disabled):hover {
+  background-color: #747bff;
+  transform: translateY(-2px);
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin: 10px 0 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #646cff;
+  transition: width 1s linear;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5em;
+  }
+}
