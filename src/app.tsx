@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'preact/hooks'
 import './app.css'
+import { getImageLink } from './utils';
 
 interface Robot {
   name: string;
@@ -44,27 +45,27 @@ export function App() {
   const robots: Robot[] = [
     {
       name: "WALL-E",
-      imageUrl: "/robot-3.png"
+      imageUrl: getImageLink("robot-3.png")
     },
     {
       name: "R2-D2",
-      imageUrl: "/robot-4.png"
+      imageUrl: getImageLink("robot-4.png")
     },
     {
       name: "Baymax",
-      imageUrl: "/robot-2.png"
+      imageUrl: getImageLink("robot-2.png")
     },
     {
       name: "Optimus Prime",
-      imageUrl: "/optimus-prime.png"
+      imageUrl: getImageLink("optimus-prime.png")
     },
     {
       name: "BB-8",
-      imageUrl: "/robot-5.png"
+      imageUrl: getImageLink("robot-5.png")
     },
     {
       name: "C-3PO",
-      imageUrl: "/robot-6.png"
+      imageUrl: getImageLink("robot-6.png")
     }
   ]
 
