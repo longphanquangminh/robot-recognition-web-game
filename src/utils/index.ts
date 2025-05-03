@@ -1,5 +1,5 @@
-import { ALIBABA_MEDIA_URL } from '../constants';
+import { CDN_IMAGE_URL } from '../constants';
 
 export const getImageLink = (image: string) => {
-  return `${ALIBABA_MEDIA_URL}/${image}`;
+  return `${CDN_IMAGE_URL}/${image}`;
 };
